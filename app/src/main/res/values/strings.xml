@@ -1,3 +1,4 @@
 <resources>
 	<string name="app_name">NupyAndroid</string>
+	<string name="HistoryComoplete">Obtaining completion</string>
 </resources>
