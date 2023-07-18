@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="viewModel"
+			type="com.example.nupyandroid.feature.MainViewModel" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/gray100">
+
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:fitsSystemWindows="true"
+			android:orientation="vertical"
+			app:layout_constraintBottom_toTopOf="@id/et_msg"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:layout_width="match_parent"
+				android:layout_height="64dp"
+				android:background="@color/white"
+				android:orientation="horizontal">
+
+				<androidx.appcompat.widget.AppCompatImageView
+					android:id="@+id/btn_cancel"
+					android:layout_width="40dp"
+					android:layout_height="40dp"
+					android:layout_gravity="center"
+					android:layout_marginStart="4dp"
+					android:src="@drawable/ic_back" />
+
+
+				<androidx.appcompat.widget.AppCompatImageView
+					android:id="@+id/iv_chat_image"
+					android:layout_width="32dp"
+					android:layout_height="32dp"
+					android:layout_gravity="center"
+					android:layout_marginStart="8dp" />
+
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/tv_chat"
+					style="@style/bold16"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:layout_marginStart="8dp"
+					android:gravity="start"
+					android:text="Harmonic Parramatta 2023"
+					android:textColor="@color/black" />
+			</androidx.appcompat.widget.LinearLayoutCompat>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="#E0E5E9" />
+
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rvChat"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingHorizontal="20dp"
+				android:paddingVertical="20dp"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				tools:itemCount="10"
+				tools:listitem="@layout/item_chat_ballon" />
+
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+		<androidx.appcompat.widget.AppCompatEditText
+			android:id="@+id/et_msg"
+			style="@style/medium16"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:layout_marginStart="30dp"
+			android:layout_marginEnd="20dp"
+			android:layout_marginBottom="40dp"
+			android:background="@drawable/box_r16_400"
+			android:gravity="start|top"
+			android:hint="Please enter your message."
+			android:maxLines="1"
+			android:paddingHorizontal="20dp"
+			android:paddingVertical="12dp"
+			android:paddingEnd="80dp"
+			android:textColor="@color/gray800"
+			app:layout_constraintBottom_toBottomOf="parent" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/btn_send"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="12dp"
+			android:src="@drawable/ic_send"
+			app:layout_constraintBottom_toBottomOf="@id/et_msg"
+			app:layout_constraintEnd_toEndOf="@id/et_msg"
+			app:layout_constraintTop_toTopOf="@id/et_msg" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/btn_camera"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:src="@drawable/ic_camera"
+			app:layout_constraintBottom_toBottomOf="@id/et_msg"
+			app:layout_constraintEnd_toStartOf="@id/btn_send"
+			app:layout_constraintTop_toTopOf="@id/et_msg" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

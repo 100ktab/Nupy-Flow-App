@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="model"
+			type="com.example.nupyandroid.model.ChatBalloon" />
+	</data>
+
+	<androidx.appcompat.widget.LinearLayoutCompat
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			visibleGone="@{model.nupy}"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:orientation="horizontal">
+
+			<androidx.appcompat.widget.AppCompatImageView
+				circleImageUrl="@{model.icon}"
+				visibleInvisible="@{model.firstNupy}"
+				android:layout_width="32dp"
+				android:layout_height="32dp" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/medium14"
+				visibleGone="@{model.firstNupy}"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:background="@drawable/box_chat_white"
+				android:gravity="start"
+				android:padding="12dp"
+				android:text="@{model.content}"
+				android:textColor="@color/gray800"
+				tools:text="123123" />
+
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+		<androidx.appcompat.widget.AppCompatTextView
+			style="@style/medium14"
+			visibleGone="@{model.getTowNupy}"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="48dp"
+			android:layout_marginTop="12dp"
+			android:background="@drawable/box_chat_white"
+			android:gravity="start"
+			android:padding="12dp"
+			android:text="@{model.content2}"
+			android:textColor="@color/gray800"
+			tools:text="123123" />
+
+
+		<androidx.appcompat.widget.AppCompatTextView
+			style="@style/medium14"
+			visibleGone="@{model.firstUser}"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end"
+			android:layout_marginTop="20dp"
+			android:background="@drawable/box_chat_black"
+			android:gravity="end"
+			android:padding="12dp"
+			android:text="@{model.content}"
+			android:textColor="@color/white"
+			tools:text="123123" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/ivUserChat"
+			visibleGone="@{model.userImage}"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end"
+			android:layout_marginTop="12dp"
+			android:background="@drawable/box_chat_black"
+			android:gravity="end"
+			android:padding="12dp"
+			android:paddingHorizontal="12dp"
+			tools:text="123123" />
+
+	</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

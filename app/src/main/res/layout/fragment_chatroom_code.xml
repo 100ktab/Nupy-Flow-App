@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<variable
+			name="viewModel"
+			type="com.example.nupyandroid.feature.MainViewModel" />
+
+	</data>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/black40"
+		android:fitsSystemWindows="true">
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="360dp"
+			android:layout_gravity="bottom"
+			android:background="@drawable/bg_half_round_24"
+			android:orientation="vertical"
+			android:padding="24dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/wallet">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/bold22"
+				android:text="Please enter the room code"
+				android:textColor="@color/black"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<androidx.appcompat.widget.AppCompatEditText
+				style="@style/medium16"
+				android:layout_width="match_parent"
+				android:layout_height="56dp"
+				android:layout_marginTop="16dp"
+				android:background="@drawable/box_r16_400"
+				android:gravity="start|center"
+				android:hint="code"
+				android:maxLines="1"
+				android:paddingHorizontal="20dp"
+				android:textColor="@color/gray800" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/code_invalid"
+				style="@style/medium14"
+				android:layout_marginTop="8dp"
+				android:text="The code is invalid. Please re-enter."
+				android:textColor="@color/red"
+				android:visibility="invisible"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1" />
+
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:id="@+id/fragment_tab"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:weightSum="2">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/btn_cancel"
+					style="@style/bold16"
+					android:layout_width="match_parent"
+					android:layout_height="56dp"
+					android:layout_marginEnd="8dp"
+					android:layout_weight="1"
+					android:background="@drawable/box_r12"
+					android:backgroundTint="@color/gray200"
+					android:src="@drawable/ic_flow_logo"
+					android:text="cancel"
+					android:textColor="@color/gray800"
+
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent" />
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/btn_confirm"
+					style="@style/bold16"
+					android:layout_width="match_parent"
+					android:layout_height="56dp"
+					android:layout_marginLeft="8dp"
+					android:layout_weight="1"
+					android:background="@drawable/box_r12"
+					android:backgroundTint="@color/brand500"
+					android:src="@drawable/ic_flow_logo"
+					android:text="confirm"
+					android:textColor="@color/white"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent" />
+			</androidx.appcompat.widget.LinearLayoutCompat>
+
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+	</FrameLayout>
+</layout>

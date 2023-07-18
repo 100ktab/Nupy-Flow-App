@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="viewModel"
+			type="com.example.nupyandroid.feature.MainViewModel" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/gray200"
+		android:fitsSystemWindows="true"
+		android:orientation="vertical">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/header"
+			android:layout_width="match_parent"
+			android:layout_height="64dp"
+			android:paddingHorizontal="12dp"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:layout_width="wrap_content"
+				android:layout_height="16dp"
+				android:src="@drawable/logo"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/btn_nft_list"
+				style="@style/medium14"
+				android:layout_width="wrap_content"
+				android:background="@drawable/box_r100_black"
+				android:drawableRight="@drawable/ic_nft"
+				android:drawablePadding="4dp"
+				android:gravity="center"
+				android:paddingHorizontal="8dp"
+				android:paddingVertical="4dp"
+				android:text="@{viewModel.NftCount}"
+				android:textColor="@color/white"
+				android:textSize="10dp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:text="123ddd" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/wallet"
+			android:layout_width="0dp"
+			android:layout_height="132dp"
+			android:layout_marginHorizontal="24dp"
+			android:background="@drawable/box_r16_black"
+			android:padding="20dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/header">
+
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/iv_flow_icon"
+				android:layout_width="wrap_content"
+				android:layout_height="16dp"
+				android:src="@drawable/ic_flow_logo"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/tv_flow_account"
+				style="@style/bold24"
+				android:layout_height="36dp"
+				android:src="@drawable/ic_flow_logo"
+				android:text="@{viewModel.balance}"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/tv_flow_doller"
+				style="@style/medium14"
+				android:text="$646.2"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_marginTop="16dp"
+			android:background="@drawable/bg_half_round_24"
+			android:orientation="vertical"
+			android:paddingHorizontal="24dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/wallet">
+
+			<androidx.appcompat.widget.LinearLayoutCompat
+				android:id="@+id/fragment_tab"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:paddingVertical="16dp">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/btn_in_progress"
+					style="@style/bold18"
+					tabTextColor=""
+					android:text="In progress"
+					android:textColor="@color/black"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/btn_complete"
+					style="@style/bold18"
+					android:layout_marginLeft="12dp"
+					android:text="Completion progress"
+					android:textColor="@color/gray500"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+			</androidx.appcompat.widget.LinearLayoutCompat>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="@color/gray200" />
+
+			<FrameLayout
+				android:id="@+id/fragment_container"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				app:layout_constraintTop_toBottomOf="@id/fragment_tab" />
+
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/btn_join_secret_room"
+			style="@style/bold16"
+			android:layout_width="0dp"
+			android:layout_height="56dp"
+			android:layout_margin="24dp"
+			android:background="@drawable/box_r12"
+			android:backgroundTint="@color/brand500"
+			android:src="@drawable/ic_flow_logo"
+			android:text="join secret room"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+
+		<FrameLayout
+			android:id="@+id/fragment_out_container"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

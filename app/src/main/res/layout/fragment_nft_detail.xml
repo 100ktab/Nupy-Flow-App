@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<variable
+			name="viewModel"
+			type="com.example.nupyandroid.feature.MainViewModel" />
+
+	</data>
+
+
+	<androidx.appcompat.widget.LinearLayoutCompat
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/white"
+		android:clickable="true"
+		android:orientation="vertical">
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="64dp"
+			android:orientation="horizontal">
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btnCancel"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_gravity="center"
+				android:layout_marginStart="4dp"
+				android:src="@drawable/ic_back" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/bold16"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:gravity="start"
+				android:text="NFT Detail"
+				android:textColor="@color/black" />
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#E0E5E9" />
+
+		<androidx.appcompat.widget.LinearLayoutCompat
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="24dp">
+
+			<com.example.nupyandroid.customview.ProductRoundImageView
+				android:id="@+id/nftImageView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:adjustViewBounds="true"
+				android:scaleType="centerCrop" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/tvTitle"
+				style="@style/bold22"
+				android:layout_marginTop="32dp"
+				android:textColor="@color/black"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				style="@style/bold16"
+				android:layout_marginTop="16dp"
+				android:text="NFT description"
+				android:textColor="@color/gray500"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/tvContent"
+				style="@style/medium16"
+				android:layout_marginTop="4dp"
+				android:gravity="start"
+				android:text="7% off immediately if you pay with Solana Pay! This coupon applies to Subway new products xxx and ccc."
+				android:textColor="@color/gray900"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+		</androidx.appcompat.widget.LinearLayoutCompat>
+
+	</androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

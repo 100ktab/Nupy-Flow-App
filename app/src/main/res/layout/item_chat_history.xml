@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="model"
+			type="com.example.nupyandroid.model.ChatHistory" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="88dp">
+
+		<ImageView
+			android:id="@+id/icon"
+			circleImageUrl="@{model.icon}"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:src="@drawable/ic_launcher_background" />
+
+		<TextView
+			android:id="@+id/title"
+			style="@style/bold16"
+			android:layout_width="0dp"
+			android:layout_height="24dp"
+			android:layout_marginLeft="12dp"
+			android:ellipsize="end"
+			android:gravity="start"
+			android:lineHeight="24dp"
+			android:maxLines="1"
+			android:text="@{model.title}"
+			android:textColor="@color/gray500"
+			app:layout_constraintBottom_toTopOf="@id/description"
+			app:layout_constraintEnd_toStartOf="@id/timeline"
+			app:layout_constraintStart_toEndOf="@id/icon"
+			app:layout_constraintTop_toTopOf="@id/icon"
+			app:layout_constraintVertical_chainStyle="packed"
+			tools:text="채팅방 이름" />
+
+		<TextView
+			android:id="@+id/description"
+			style="@style/regular12"
+			android:layout_width="0dp"
+			android:ellipsize="end"
+			android:gravity="start"
+			android:lineHeight="18dp"
+			android:maxLines="1"
+			android:text="@{model.description}"
+			android:textColor="@color/gray500"
+			app:layout_constraintBottom_toTopOf="@id/complete"
+			app:layout_constraintEnd_toStartOf="@id/timeline"
+			app:layout_constraintStart_toStartOf="@id/title"
+			app:layout_constraintTop_toBottomOf="@id/title"
+			tools:text="가나다라마바사아자ㅏ" />
+
+		<TextView
+			android:id="@+id/complete"
+			style="@style/medium12"
+			historyType="@{model.complete}"
+			android:layout_width="wrap_content"
+			android:layout_height="26dp"
+			android:layout_gravity="center"
+			android:layout_marginTop="2dp"
+			android:background="@drawable/box_r100_green"
+			android:gravity="center"
+			android:paddingHorizontal="8dp"
+			android:text="@string/HistoryComoplete"
+			android:textColor="@color/green"
+			app:layout_constraintBottom_toBottomOf="@id/icon"
+			app:layout_constraintStart_toStartOf="@id/title"
+			app:layout_constraintTop_toBottomOf="@id/description" />
+
+		<TextView
+			android:id="@+id/timeline"
+			style="@style/regular12"
+			android:text="@{model.timeline}"
+			android:textColor="@color/gray500"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="@id/icon"
+			tools:text="가나다라마바사아자ㅏ" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
