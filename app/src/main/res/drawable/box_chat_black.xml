@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<solid android:color="@color/gray900" /> <!-- 원하는 배경색 지정 -->
+	<corners
+		android:bottomLeftRadius="20dp"
+		android:bottomRightRadius="20dp"
+		android:topLeftRadius="20dp"
+		android:topRightRadius="0dp" /> <!-- 왼쪽 모서리를 제외한 나머지 모서리에 라운드 값을 지정 -->
+</shape>
